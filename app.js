@@ -50,3 +50,7 @@ app.use("/users", userRoute);
 //Task Routes
 const taskRoute = require("./routes/task");
 app.use("/tasks", taskRoute);
+
+//Tag Routes
+const tagRoute = require("./routes/tag");
+app.use("/tags", tagRoute);

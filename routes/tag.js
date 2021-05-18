@@ -1,35 +1,35 @@
 const express = require("express");
-const Task = require("../models/Task");
+const Tag = require("../models/tag");
 const router = express.Router();
 
-//Create task
+//Create tag
 router.post("/create", async (req, res) => {
-  const task = new Task(req.body);
-  console.log(task);
+  const tag = new Tag(req.body);
+  console.log(tag);
   try {
-    await task.save();
-    res.send(task);
+    await tag.save();
+    res.send(tag);
   } catch (error) {
     res.status(500).send(error);
   }
 });
 
-//Get Tasks
+//Get tags
 router.get("/get/:userId", async (req, res) => {
   try {
-    const task = await Task.find({ userId: req.params.userId });
-    res.json(task);
+    const tag = await Tag.find({ userId: req.params.userId });
+    res.json(tag);
   } catch (err) {
     res.json({ message: err });
   }
 });
 
-//Update task by id
+//Update tag by id
 router.put("/update/:id", async (req, res) => {
   console.log(req.params.id);
   console.log(req.body);
   try {
-    await Task.findByIdAndUpdate(req.params.id, req.body, function (err, data) {
+    await Tag.findByIdAndUpdate(req.params.id, req.body, function (err, data) {
       if (err) {
         console.log(err);
       } else {

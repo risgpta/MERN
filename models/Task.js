@@ -13,6 +13,12 @@ const TaskSchema = mongoose.Schema({
         maxlength: 24,
         trim: true,
       },
+      tagName: {
+        type: String,
+        required: true,
+        maxlength: 24,
+        trim: true,
+      },
       taskStatus: {
         type: Number,
         required: true,
@@ -25,6 +31,9 @@ const TaskSchema = mongoose.Schema({
       },
       finishTime: {
         type: Date,
+      },
+      taskPriority: {
+        type: Number,
       },
     },
   ],
