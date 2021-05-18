@@ -31,6 +31,18 @@ mongoose
 //listen
 app.listen(5000, () => console.log(`Server running on port 5000`));
 
+//Middlewares
+/*
+app.use.(auth)
+app.use('/about',() => {
+    console.log('middleare...');
+})
+*/
+//home route
+app.get("/", (req, res) => {
+  res.send("we are home !!!----");
+});
+
 //User Routes
 const userRoute = require("./routes/user");
 app.use("/users", userRoute);
