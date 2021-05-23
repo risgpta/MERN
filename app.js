@@ -8,7 +8,10 @@ const router = express.Router();
 
 const cors = require("cors");
 
-var allowedOrigins = ["http://localhost:5000"];
+var allowedOrigins = [
+  "http://localhost:5000",
+  "https://api-smartmanager.herokuapp.com",
+];
 
 app.use(
   cors({
