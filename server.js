@@ -49,9 +49,8 @@ mongoose
   .catch((err) => console.log(err));
 
 //listen
-app.listen(process.env.PORT || 5000, () =>
-  console.log(`Server running on port ${process.env.PORT}`)
-);
+const port = process.env.PORT || 8000;
+app.listen(port, () => console.log(`Server running on port ${port}`));
 
 //Middlewares
 /*
